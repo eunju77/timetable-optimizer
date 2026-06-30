@@ -70,7 +70,7 @@ shell.innerHTML = [
   '<div class="hero">',
   '  <div class="hero-card">',
   '    <div class="eyebrow">로컬 데모가 정상적으로 실행 중입니다</div>',
-  '    <h1>대학원 학사 시간표 최적화 엔진</h1>',
+  '    <h1>대학 학사 시간표 최적화 엔진</h1>',
   '    <p class="lead">화면이 비어 있던 문제를 없애기 위해, 초기 화면을 가볍고 독립적인 대시보드로 정리했습니다. 지금은 로컬 데이터만으로도 바로 보이고, 재계산 버튼을 눌러 시간표를 다시 그릴 수 있습니다.</p>',
   '    <div class="hero-actions">',
   '      <button class="btn btn-primary" id="recalc-btn">샘플 시간표 다시 계산</button>',
