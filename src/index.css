@@ -1,0 +1,83 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --color-ku-crimson: #C41E3A;
+  --color-ku-crimson-50: #FEF0F2;
+  --color-ku-crimson-100: #FDE8EC;
+  --color-ku-crimson-200: #F9C4CD;
+  --color-ku-crimson-300: #F49EAE;
+  --color-ku-crimson-400: #EB5E78;
+  --color-ku-crimson-500: #C41E3A;
+  --color-ku-crimson-600: #A01830;
+  --color-ku-crimson-700: #801326;
+  --color-ku-crimson-800: #600E1C;
+  --color-ku-crimson-900: #400912;
+  --color-ku-gold: #D4A843;
+  --color-ku-gold-50: #FBF3E0;
+  --color-ku-gold-100: #F5E4B8;
+  --color-ku-gold-200: #EED08A;
+  --color-ku-gold-300: #D4A843;
+  --color-ku-gold-400: #B89230;
+  --color-ku-gold-500: #9C7B28;
+}
+
+/* Custom styles for professional scrollbar */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: rgba(156, 163, 175, 0.3);
+  border-radius: 9999px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: rgba(156, 163, 175, 0.5);
+}
+
+/* Print optimizations */
+@media print {
+  header, #left-sidebar, #view-type-toggles, #sub-filter-selector, #help-card, #ai-reviewer, #btn-optimize-main, #header-action-buttons {
+    display: none !important;
+  }
+  
+  body, main {
+    background: white !important;
+    color: black !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  
+  #main-content {
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  #workspace-layout {
+    grid-template-cols: 1fr !important;
+  }
+  
+  #timetable-view {
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+  }
+  
+  #timetable-calendar-container {
+    overflow: visible !important;
+  }
+  
+  #timetable-calendar-container div {
+    page-break-inside: avoid;
+  }
+}

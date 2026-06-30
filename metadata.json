@@ -1,0 +1,6 @@
+{
+  "name": "대학 학사 시간표 최적화 엔진",
+  "description": "학년별 전공 중복 배타 조건 및 교수진 일일 최대 강의시간 제약을 엄격히 준수하여 CSP 최적화 시간표를 생성하고 Gemini AI 기반의 학사 일정 분석 리포트를 제공하는 시간표 솔루션입니다.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
