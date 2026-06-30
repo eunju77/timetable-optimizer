@@ -157,7 +157,7 @@ export default function App() {
             </button>
             <button
               onClick={handleClearAll}
-              className="px-3.5 py-2 border border-gray-200 hover:bg-slate-50 text-rose-600 rounded-xl text-xs font-semibold flex items-center gap-1.5 cursor-pointer transition-all active:scale-95"
+              className="px-3.5 py-2 border border-gray-200 hover:bg-slate-50 text-ku-crimson-600 rounded-xl text-xs font-semibold flex items-center gap-1.5 cursor-pointer transition-all active:scale-95"
             >
               <span>전체 비우기</span>
             </button>
@@ -198,9 +198,9 @@ export default function App() {
       <main className="max-w-7xl mx-auto px-6 py-8 space-y-8" id="main-content">
         {/* Unscheduled warning bar if any courses could not be fitted */}
         {unscheduledCourses.length > 0 && (
-          <div className="p-4 bg-amber-50 border border-amber-200 rounded-2xl flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3" id="unscheduled-warning">
-            <div className="flex items-start gap-2.5 text-xs text-amber-800 font-sans">
-              <span className="p-1 rounded-lg bg-amber-100 text-amber-700 font-bold font-mono">
+          <div className="p-4 bg-ku-gold-50 border border-ku-gold-200 rounded-2xl flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3" id="unscheduled-warning">
+            <div className="flex items-start gap-2.5 text-xs text-ku-gold-500 font-sans">
+              <span className="p-1 rounded-lg bg-ku-gold-100 text-ku-gold-500 font-bold font-mono">
                 !
               </span>
               <div>

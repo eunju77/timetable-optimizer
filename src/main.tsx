@@ -15,8 +15,8 @@ if (!root) throw new Error('Root element not found.');
 
 const style = document.createElement('style');
 style.textContent = [
-  ':root { color-scheme: light; --panel: rgba(255,255,255,0.8); --text: #0f172a; --muted: #64748b; --accent: #1d4ed8; --accent-2: #0f766e; --shadow: 0 24px 70px rgba(15,23,42,0.12); }',
-  'html, body { margin: 0; min-height: 100%; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: radial-gradient(circle at top left, rgba(29,78,216,0.16), transparent 34%), radial-gradient(circle at top right, rgba(14,165,233,0.12), transparent 30%), linear-gradient(180deg, #f8fbff, #eef4ff); color: var(--text); }',
+  ':root { color-scheme: light; --panel: rgba(255,255,255,0.8); --text: #0f172a; --muted: #64748b; --accent: #C41E3A; --accent-2: #D4A843; --shadow: 0 24px 70px rgba(15,23,42,0.12); }',
+  'html, body { margin: 0; min-height: 100%; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: radial-gradient(circle at top left, rgba(196,30,58,0.12), transparent 34%), radial-gradient(circle at top right, rgba(212,168,67,0.10), transparent 30%), linear-gradient(180deg, #fef0f2, #fde8ec); color: var(--text); }',
   '* { box-sizing: border-box; }',
   'body::before { content: ""; position: fixed; inset: 0; pointer-events: none; background-image: linear-gradient(rgba(15,23,42,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(15,23,42,0.03) 1px, transparent 1px); background-size: 32px 32px; mask-image: linear-gradient(180deg, rgba(0,0,0,0.2), transparent 72%); }',
   '#root { position: relative; z-index: 1; }',
@@ -26,15 +26,15 @@ style.textContent = [
   '.hero-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-top: 18px; }',
   '.hero-card, .metric, .panel, .table-wrap { backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); background: var(--panel); border: 1px solid rgba(148,163,184,0.18); box-shadow: var(--shadow); }',
   '.hero-card { border-radius: 28px; padding: 28px; position: relative; overflow: hidden; }',
-  '.hero-card::after { content: ""; position: absolute; right: -60px; top: -60px; width: 220px; height: 220px; border-radius: 50%; background: radial-gradient(circle, rgba(29,78,216,0.24), transparent 68%); }',
-  '.eyebrow { display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 999px; background: rgba(29,78,216,0.08); color: var(--accent); font-size: 12px; font-weight: 700; }',
+  '.hero-card::after { content: ""; position: absolute; right: -60px; top: -60px; width: 220px; height: 220px; border-radius: 50%; background: radial-gradient(circle, rgba(196,30,58,0.20), transparent 68%); }',
+  '.eyebrow { display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 999px; background: rgba(196,30,58,0.08); color: var(--accent); font-size: 12px; font-weight: 700; }',
   'h1 { margin: 14px 0 10px; font-size: clamp(34px, 5vw, 62px); line-height: 0.95; letter-spacing: -0.05em; }',
   '.lead { margin: 0; max-width: 64ch; color: var(--muted); font-size: 16px; line-height: 1.7; }',
   '.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; }',
   'button { border: 0; cursor: pointer; font: inherit; }',
   '.btn { padding: 12px 16px; border-radius: 14px; font-weight: 700; transition: transform 140ms ease, box-shadow 140ms ease; }',
   '.btn:hover { transform: translateY(-1px); }',
-  '.btn-primary { background: linear-gradient(135deg, #1d4ed8, #2563eb); color: white; box-shadow: 0 12px 30px rgba(37,99,235,0.28); }',
+  '.btn-primary { background: linear-gradient(135deg, #C41E3A, #A01830); color: white; box-shadow: 0 12px 30px rgba(196,30,58,0.28); }',
   '.btn-secondary { background: white; color: var(--text); border: 1px solid rgba(148,163,184,0.25); }',
   '.side-stack { display: grid; gap: 14px; }',
   '.metric { border-radius: 24px; padding: 18px; }',
@@ -51,8 +51,9 @@ style.textContent = [
   '.table-wrap { border-radius: 26px; padding: 18px; overflow: auto; }',
   '.timetable { width: 100%; min-width: 920px; border-collapse: separate; border-spacing: 10px; }',
   '.timetable th, .timetable td { padding: 12px; border-radius: 18px; vertical-align: top; }',
-  '.timetable th { background: rgba(15,23,42,0.05); font-size: 12px; text-align: center; }',
-  '.period-cell { background: rgba(255,255,255,0.8); font-weight: 700; text-align: center; color: var(--muted); width: 96px; }',
+  '.timetable th { background: rgba(196,30,58,0.06); font-size: 12px; text-align: center; font-weight: 700; color: #C41E3A; }',
+  '.period-cell { background: rgba(255,255,255,0.8); font-weight: 700; text-align: center; color: var(--muted); width: 140px; }',
+  '.day-cell { background: rgba(196,30,58,0.04); font-weight: 700; text-align: center; color: var(--accent); width: 100px; }',
   '.slot { min-height: 92px; background: rgba(255,255,255,0.76); border: 1px solid rgba(148,163,184,0.16); }',
   '.slot.empty { background: linear-gradient(180deg, rgba(255,255,255,0.85), rgba(248,250,252,0.9)); }',
   '.course { display: flex; flex-direction: column; gap: 8px; height: 100%; }',
@@ -164,40 +165,40 @@ function render(result = buildSchedule()) {
     const thead = document.createElement('thead');
     const headRow = document.createElement('tr');
     const corner = document.createElement('th');
-    corner.textContent = '교시';
+    corner.textContent = '요일';
     headRow.appendChild(corner);
-    for (const day of DAYS) {
+    for (const period of PERIODS) {
       const th = document.createElement('th');
-      th.textContent = DAYS_KR[day];
+      th.innerHTML = period.id + '교시<br><span style="font-size: 11px; font-weight: 600;">' + period.time + '</span>';
       headRow.appendChild(th);
     }
     thead.appendChild(headRow);
     table.appendChild(thead);
 
     const tbody = document.createElement('tbody');
-    for (const period of PERIODS) {
+    for (const day of DAYS) {
       const row = document.createElement('tr');
-      const periodCell = document.createElement('td');
-      periodCell.className = 'period-cell';
-      periodCell.innerHTML = period.id + '교시<br><span style="font-size: 11px; font-weight: 600;">' + period.time + '</span>';
-      row.appendChild(periodCell);
+      const dayCell = document.createElement('td');
+      dayCell.className = 'day-cell';
+      dayCell.textContent = DAYS_KR[day];
+      row.appendChild(dayCell);
 
-      for (const day of DAYS) {
+      for (const period of PERIODS) {
         const cell = document.createElement('td');
         cell.className = 'slot';
         const item = slotMap.get(day + '-' + period.id);
         if (item) {
-          cell.style.background = item.major ? '#dbeafe' : '#dcfce7';
+          cell.style.background = item.major ? '#FDE8EC' : '#FBF3E0';
           cell.innerHTML = [
             '<div class="course">',
-            '  <div class="tag" style="background: ' + (item.major ? '#2563eb' : '#0f766e') + ';">' + (item.major ? '전공' : '교양') + '</div>',
+            '  <div class="tag" style="background: ' + (item.major ? '#C41E3A' : '#D4A843') + ';">' + (item.major ? '전공' : '교양') + '</div>',
             '  <div class="name">' + item.label + '</div>',
             '  <div class="meta">' + item.code + '<br>' + item.professor + '<br>' + item.room + '</div>',
             '</div>',
           ].join('');
         } else {
           cell.className = 'slot empty';
-          cell.innerHTML = '<div style="height: 100%; display: flex; align-items: center; justify-content: center; color: rgba(100,116,139,0.45); font-size: 12px;">비어 있음</div>';
+          cell.innerHTML = '<div style="height: 100%; display: flex; align-items: center; justify-content: center; color: rgba(100,116,139,0.45); font-size: 12px;">-</div>';
         }
         row.appendChild(cell);
       }
