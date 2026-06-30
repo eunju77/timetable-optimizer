@@ -157,6 +157,12 @@ function showCourseModal(existingCourse?: any) {
     '  <div class="field"><label>시수</label><select id="modal-hours">' +
       [2,3,4].map(h => '<option value="' + h + '"' + (existingCourse?.weeklyHours === h ? ' selected' : '') + '>' + h + '시간</option>').join('') +
     '</select></div>',
+    '  <div class="field"><label>담당 교수</label><select id="modal-professor">' +
+      DEFAULT_PROFESSORS.map(p => '<option value="' + p.id + '"' + (existingCourse?.professorId === p.id ? ' selected' : '') + '>' + p.name + '</option>').join('') +
+    '</select></div>',
+    '  <div class="field"><label>강의실</label><select id="modal-classroom">' +
+      DEFAULT_CLASSROOMS.map(r => '<option value="' + r.id + '"' + (existingCourse?.classroomId === r.id ? ' selected' : '') + '>' + r.name + '</option>').join('') +
+    '</select></div>',
     '  <div class="actions">',
     (isEdit ? '<button class="btn btn-danger btn-sm" id="modal-delete">삭제</button>' : '') +
     '    <button class="btn btn-secondary btn-sm" id="modal-cancel">취소</button>',
@@ -173,6 +179,8 @@ function showCourseModal(existingCourse?: any) {
     const grade = Number((overlay.querySelector('#modal-grade') as HTMLSelectElement).value) as 1|2|3|4;
     const isMajor = (overlay.querySelector('#modal-major') as HTMLSelectElement).value === 'major';
     const weeklyHours = Number((overlay.querySelector('#modal-hours') as HTMLSelectElement).value);
+    const professorId = (overlay.querySelector('#modal-professor') as HTMLSelectElement).value;
+    const classroomId = (overlay.querySelector('#modal-classroom') as HTMLSelectElement).value;
 
     if (!name || !code) { alert('과목명과 학수번호를 입력하세요.'); return; }
 
@@ -182,6 +190,8 @@ function showCourseModal(existingCourse?: any) {
       existingCourse.grade = grade;
       existingCourse.isMajor = isMajor;
       existingCourse.weeklyHours = weeklyHours;
+      existingCourse.professorId = professorId;
+      existingCourse.classroomId = classroomId;
     } else {
       const maxId = Math.max(0, ...currentCourses.map(c => {
         const num = parseInt(c.id.replace('course-', ''));
@@ -193,8 +203,8 @@ function showCourseModal(existingCourse?: any) {
         name,
         grade,
         isMajor,
-        professorId: DEFAULT_PROFESSORS[0].id,
-        classroomId: DEFAULT_CLASSROOMS[0].id,
+        professorId,
+        classroomId,
         weeklyHours,
       });
     }
